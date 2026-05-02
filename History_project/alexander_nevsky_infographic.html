@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Александр Невский - Инфографика</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: rgba(20, 20, 25, 0.95);
+            --accent-gold: #ffd700;
+            --accent-blue: #4facfe;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-red: #ff4757;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.75);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Roboto', 'Lato', 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: var(--text-primary);
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(79, 172, 254, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(255, 255, 255, 0.015) 100px, rgba(255, 255, 255, 0.015) 101px),
+                repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(255, 255, 255, 0.015) 100px, rgba(255, 255, 255, 0.015) 101px),
+                radial-gradient(circle at 30% 40%, rgba(79, 172, 254, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 70% 60%, rgba(168, 85, 247, 0.05) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        /* Кастомные скроллбары */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+
+        *::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+            background-clip: padding-box;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+            perspective: 1000px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            to { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+            line-height: 1.2;
+            text-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.3),
+                0 8px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: translateZ(50px);
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        }
+
+        .header .subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.8rem);
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 300;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: rgba(20, 20, 25, 0.6);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+            z-index: 1;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            opacity: 0.9;
+        }
+
+        .stat-card::after {
+            content: 'i';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background: rgba(79, 172, 254, 0.2);
+            border: 1px solid rgba(79, 172, 254, 0.4);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(79, 172, 254, 0.3);
+            background: rgba(25, 25, 30, 0.75);
+            box-shadow: 
+                0 16px 40px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(79, 172, 254, 0.2) inset;
+            z-index: 10;
+        }
+
+        .stat-card:hover::after {
+            opacity: 1;
+            background: rgba(79, 172, 254, 0.3);
+            border-color: rgba(79, 172, 254, 0.6);
+            transform: scale(1.1);
+        }
+
+        .stat-number {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            letter-spacing: -2px;
+            text-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                0 8px 30px rgba(0, 0, 0, 0.2);
+            transform: translateZ(20px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1.5px;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 60px 0;
+            margin: 80px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, 
+                var(--accent-purple) 0%, 
+                var(--accent-blue) 25%,
+                var(--accent-pink) 50%,
+                var(--accent-blue) 75%,
+                var(--accent-purple) 100%);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 
+                0 0 30px rgba(168, 85, 247, 0.6),
+                0 0 60px rgba(79, 172, 254, 0.4);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 80px 0;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(20, 20, 25, 0.6);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: visible;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+        }
+
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue), var(--accent-pink));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .timeline-content:hover::before {
+            opacity: 1;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px) translateZ(40px) rotateY(2deg) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(25, 25, 30, 0.8);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+                0 0 80px rgba(168, 85, 247, 0.1);
+        }
+
+        .timeline-year {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            letter-spacing: -2px;
+            text-shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.3),
+                0 8px 24px rgba(0, 0, 0, 0.2);
+            transform: translateZ(15px);
+        }
+
+        .timeline-title {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            margin-bottom: 18px;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .info-btn {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            border: 5px solid var(--bg-primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 
+                0 0 25px rgba(79, 172, 254, 0.7),
+                0 0 50px rgba(168, 85, 247, 0.5),
+                0 0 0 10px rgba(79, 172, 254, 0.15);
+            z-index: 10;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
+            animation: markerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes markerPulse {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1);
+                box-shadow: 
+                    0 0 25px rgba(79, 172, 254, 0.7),
+                    0 0 50px rgba(168, 85, 247, 0.5),
+                    0 0 0 10px rgba(79, 172, 254, 0.15);
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.1);
+                box-shadow: 
+                    0 0 35px rgba(79, 172, 254, 0.9),
+                    0 0 70px rgba(168, 85, 247, 0.7),
+                    0 0 0 15px rgba(79, 172, 254, 0.25);
+            }
+        }
+
+
+        .timeline-item:hover .timeline-marker {
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 
+                0 0 30px rgba(79, 172, 254, 0.6),
+                0 0 60px rgba(168, 85, 247, 0.4),
+                0 0 0 12px rgba(79, 172, 254, 0.15);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: rgba(20, 20, 25, 0.95);
+            backdrop-filter: blur(60px) saturate(180%);
+            -webkit-backdrop-filter: blur(60px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+            box-shadow: 
+                0 30px 100px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            animation: slideUp 0.4s ease;
+            transform-style: preserve-3d;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--text-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 77, 87, 0.3);
+            border-color: var(--accent-red);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-info {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .modal-stat {
+            background: var(--glass-bg);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .modal-stat-number {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .modal-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .battles-section {
+            margin: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .battles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .battle-card {
+            background: rgba(20, 20, 25, 0.6);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-self: start;
+        }
+
+
+        .battle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue), var(--accent-pink));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .battle-card:hover::before {
+            opacity: 1;
+        }
+
+        .battle-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(168, 85, 247, 0.3);
+            background: rgba(25, 25, 30, 0.75);
+            box-shadow: 
+                0 16px 40px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(168, 85, 247, 0.2) inset;
+            z-index: 10;
+        }
+
+        .battle-tooltip {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background: rgba(168, 85, 247, 0.2);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: bold;
+        }
+
+        .battle-card:hover .battle-tooltip {
+            opacity: 1;
+            background: rgba(168, 85, 247, 0.3);
+            border-color: rgba(168, 85, 247, 0.6);
+            transform: scale(1.1);
+        }
+
+        .battle-title {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .battle-year {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .battle-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .battle-stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .battle-stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .battle-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .battle-stat-value {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .quote-section {
+            margin: 80px 0;
+            padding: 60px 40px;
+            background: rgba(20, 20, 25, 0.6);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 40px;
+            font-size: 12rem;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: rgba(79, 172, 254, 0.08);
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .quote {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-author {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .legacy-section {
+            margin-top: 80px;
+            padding: 50px 40px;
+            background: rgba(20, 20, 25, 0.6);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            transform-style: preserve-3d;
+        }
+
+        .legacy-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .legacy-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .legacy-item {
+            padding: 28px;
+            background: rgba(15, 15, 20, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+
+        .legacy-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue), var(--accent-pink));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .legacy-item:hover::before {
+            opacity: 1;
+        }
+
+        .legacy-item:hover {
+            transform: translateX(12px) translateZ(20px) rotateY(2deg) scale(1.02);
+            background: rgba(25, 25, 30, 0.7);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 12px 50px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+                0 0 60px rgba(168, 85, 247, 0.08);
+        }
+
+        .legacy-item strong {
+            color: var(--text-primary);
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .legacy-item span {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 50px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            font-size: 1rem;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .header {
+                padding: 40px 15px;
+                margin-bottom: 50px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 80px;
+                margin: 50px 0;
+            }
+
+            .timeline-content {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .timeline-marker {
+                left: 30px;
+                width: 24px;
+                height: 24px;
+            }
+
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .stat-card {
+                padding: 30px 20px;
+            }
+
+
+
+            .battles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-section {
+                padding: 40px 25px;
+            }
+
+            .quote-section::before {
+                font-size: 8rem;
+                top: -20px;
+                left: 20px;
+            }
+
+            .legacy-list {
+                grid-template-columns: 1fr;
+            }
+
+            .legacy-section {
+                padding: 35px 25px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Александр Невский</h1>
+            <div class="subtitle">Великий князь Новгородский, Владимирский и Киевский</div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-card" onclick="openModal('birth')">
+                <div class="stat-number">1220</div>
+                <div class="stat-label">Год рождения</div>
+            </div>
+            <div class="stat-card" onclick="openModal('life')">
+                <div class="stat-number">43</div>
+                <div class="stat-label">Годы жизни</div>
+            </div>
+            <div class="stat-card" onclick="openModal('battles')">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Великие битвы</div>
+            </div>
+            <div class="stat-card" onclick="openModal('death')">
+                <div class="stat-number">1263</div>
+                <div class="stat-label">Год смерти</div>
+            </div>
+        </div>
+
+        <div class="battles-section">
+            <div class="section-title">Великие битвы</div>
+            <div class="battles-grid">
+                <div class="battle-card" onclick="openModal('neva')">
+                    <div class="battle-tooltip">i</div>
+                    <div class="battle-year">1240</div>
+                    <div class="battle-title">Невская битва</div>
+                    <div class="battle-description">
+                        Решающая победа над шведским войском на реке Неве. За эту победу Александр получил прозвище "Невский".
+                    </div>
+                    <div class="battle-stats">
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Русские</div>
+                            <div class="battle-stat-value">~1,5K</div>
+                        </div>
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Шведы</div>
+                            <div class="battle-stat-value">~5K</div>
+                        </div>
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Результат</div>
+                            <div class="battle-stat-value">Победа</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="battle-card" onclick="openModal('ice')">
+                    <div class="battle-tooltip">i</div>
+                    <div class="battle-year">1242</div>
+                    <div class="battle-title">Ледовое побоище</div>
+                    <div class="battle-description">
+                        Легендарная битва на Чудском озере против Ливонского ордена. Одна из самых знаменитых битв в русской истории.
+                    </div>
+                    <div class="battle-stats">
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Русские</div>
+                            <div class="battle-stat-value">~15K</div>
+                        </div>
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Крестоносцы</div>
+                            <div class="battle-stat-value">~12K</div>
+                        </div>
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Результат</div>
+                            <div class="battle-stat-value">Победа</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="battle-card" onclick="openModal('toropets')">
+                    <div class="battle-tooltip">i</div>
+                    <div class="battle-year">1245</div>
+                    <div class="battle-title">Битва под Торопцем</div>
+                    <div class="battle-description">
+                        Победа над литовскими войсками, укрепившая позиции Новгорода на западных границах.
+                    </div>
+                    <div class="battle-stats">
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Русские</div>
+                            <div class="battle-stat-value">~8K</div>
+                        </div>
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Литовцы</div>
+                            <div class="battle-stat-value">~6K</div>
+                        </div>
+                        <div class="battle-stat">
+                            <div class="battle-stat-label">Результат</div>
+                            <div class="battle-stat-value">Победа</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1220</div>
+                    <div class="timeline-title">Рождение</div>
+                    <div class="timeline-description">
+                        Александр Ярославич родился в Переславле-Залесском. Сын князя Ярослава Всеволодовича и внук Всеволода Большое Гнездо. С детства готовился к княжескому служению.
+                    </div>
+                    <button class="info-btn" onclick="openModal('birth')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1236</div>
+                    <div class="timeline-title">Начало княжения в Новгороде</div>
+                    <div class="timeline-description">
+                        В возрасте 16 лет Александр становится князем Новгородским. Начинается его самостоятельное правление в одном из важнейших городов Древней Руси.
+                    </div>
+                    <button class="info-btn" onclick="openModal('novgorod')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1240</div>
+                    <div class="timeline-title">Невская битва</div>
+                    <div class="timeline-description">
+                        Решающая победа над шведским войском на реке Неве. За эту победу Александр получил прозвище "Невский". Битва предотвратила захват новгородских земель шведами.
+                    </div>
+                    <button class="info-btn" onclick="openModal('neva')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1242</div>
+                    <div class="timeline-title">Ледовое побоище</div>
+                    <div class="timeline-description">
+                        Легендарная битва на Чудском озере против Ливонского ордена. Победа русских войск остановила экспансию крестоносцев на восток. Одна из самых знаменитых битв в русской истории.
+                    </div>
+                    <button class="info-btn" onclick="openModal('ice')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1247</div>
+                    <div class="timeline-title">Княжение в Киеве</div>
+                    <div class="timeline-description">
+                        Александр получает титул великого князя Киевского. Однако реальная власть в Киеве была ограничена из-за монгольского ига.
+                    </div>
+                    <button class="info-btn" onclick="openModal('kiev')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1252</div>
+                    <div class="timeline-title">Великое княжение Владимирское</div>
+                    <div class="timeline-description">
+                        Александр становится великим князем Владимирским - высшим титулом на Руси того времени. Укрепляет центральную власть и продолжает дипломатическую политику с Ордой.
+                    </div>
+                    <button class="info-btn" onclick="openModal('vladimir')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1262</div>
+                    <div class="timeline-title">Восстание против монголов</div>
+                    <div class="timeline-description">
+                        В нескольких русских городах вспыхивают восстания против монгольских сборщиков дани. Александр едет в Орду, чтобы предотвратить карательный поход и спасти русские земли.
+                    </div>
+                    <button class="info-btn" onclick="openModal('uprising')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">1263</div>
+                    <div class="timeline-title">Кончина</div>
+                    <div class="timeline-description">
+                        Возвращаясь из Орды, Александр Невский тяжело заболел и скончался в Городце. Похоронен во Владимире. В 1547 году канонизирован Русской православной церковью.
+                    </div>
+                    <button class="info-btn" onclick="openModal('death')">Подробнее</button>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+        </div>
+
+        <div class="quote-section">
+            <div class="quote">"Не в силе Бог, а в правде!"</div>
+            <div class="quote-author">— Александр Невский</div>
+        </div>
+
+        <div class="legacy-section">
+            <div class="legacy-title">Наследие Александра Невского</div>
+            <ul class="legacy-list">
+                <li class="legacy-item">
+                    <strong>Военная слава:</strong>
+                    <span>Остановил экспансию западных захватчиков, защитив русские земли. Не проиграл ни одной битвы, став символом военного гения.</span>
+                </li>
+                <li class="legacy-item">
+                    <strong>Дипломатия:</strong>
+                    <span>Умелая политика с Золотой Ордой сохранила русские княжества от разорения. Избежал прямого конфликта, сохранив силы для борьбы с западными врагами.</span>
+                </li>
+                <li class="legacy-item">
+                    <strong>Православие:</strong>
+                    <span>Защитил православную веру от католической экспансии. Отказался от предложения папы римского принять католичество в обмен на помощь против монголов.</span>
+                </li>
+                <li class="legacy-item">
+                    <strong>Единство Руси:</strong>
+                    <span>Способствовал сохранению русской государственности в трудный период. Укрепил центральную власть и предотвратил распад русских земель.</span>
+                </li>
+                <li class="legacy-item">
+                    <strong>Канонизация:</strong>
+                    <span>Признан святым Русской православной церковью в 1547 году. Почитается как защитник земли Русской и покровитель воинов.</span>
+                </li>
+                <li class="legacy-item">
+                    <strong>Память:</strong>
+                    <span>Орден Александра Невского - одна из высших наград России. Его имя носят улицы, площади, храмы и военные корабли по всей стране.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Инфографика создана для изучения истории Древней Руси</p>
+            <p>XIII век - эпоха Александра Невского</p>
+        </div>
+    </div>
+
+    <!-- Модальные окна -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const modalData = {
+            birth: {
+                title: 'Рождение и ранние годы',
+                content: `
+                    <div class="modal-info">
+                        <p>Александр Ярославич родился 30 мая 1220 года (по другим данным - 1221) в Переславле-Залесском. Он был вторым сыном переяславского князя Ярослава Всеволодовича и Ростиславы Мстиславны.</p>
+                        <p>Его дедом был знаменитый Всеволод Большое Гнездо, один из самых могущественных князей Древней Руси. С детства Александр готовился к княжескому служению, изучая военное дело, дипломатию и управление.</p>
+                        <p>В 1225 году Ярослав провел над сыновьями обряд пострига - "княжеский постриг", после которого Александр считался полноправным княжичем.</p>
+                    </div>
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">1220</div>
+                            <div class="modal-stat-label">Год рождения</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Переславль</div>
+                            <div class="modal-stat-label">Место рождения</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Ярослав</div>
+                            <div class="modal-stat-label">Отец</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Всеволод</div>
+                            <div class="modal-stat-label">Дед</div>
+                        </div>
+                    </div>
+                `
+            },
+            life: {
+                title: '43 года жизни',
+                content: `
+                    <div class="modal-info">
+                        <p>Александр Невский прожил 43 года (1220-1263), что было довольно долгой жизнью для того времени. За эти годы он успел:</p>
+                        <ul style="margin: 20px 0; padding-left: 30px; color: var(--text-secondary); line-height: 2;">
+                            <li>Стать великим полководцем, не проигравшим ни одной битвы</li>
+                            <li>Править тремя крупнейшими княжествами Руси</li>
+                            <li>Остановить экспансию западных захватчиков</li>
+                            <li>Сохранить русские земли от полного разорения</li>
+                            <li>Заложить основы будущего объединения Руси</li>
+                        </ul>
+                        <p>Его жизнь была полностью посвящена служению Отечеству и защите православной веры.</p>
+                    </div>
+                `
+            },
+            battles: {
+                title: 'Три великие битвы',
+                content: `
+                    <div class="modal-info">
+                        <p>Александр Невский провел три крупнейшие битвы, каждая из которых имела огромное историческое значение:</p>
+                        <p><strong>1. Невская битва (1240)</strong> - разгром шведского войска, предотвративший захват новгородских земель.</p>
+                        <p><strong>2. Ледовое побоище (1242)</strong> - победа над Ливонским орденом, остановившая экспансию крестоносцев на восток.</p>
+                        <p><strong>3. Битва под Торопцем (1245)</strong> - победа над литовскими войсками, укрепившая западные границы Руси.</p>
+                        <p>Все три битвы были выиграны благодаря военному гению Александра, его умению выбирать место и время сражения, а также использовать особенности местности.</p>
+                    </div>
+                `
+            },
+            death: {
+                title: 'Кончина и канонизация',
+                content: `
+                    <div class="modal-info">
+                        <p>Возвращаясь из Орды в 1263 году, Александр Невский тяжело заболел. По одной из версий, он был отравлен в Орде. Скончался князь 14 ноября 1263 года в Городце на Волге.</p>
+                        <p>Перед смертью он принял схиму (высшую степень монашества) с именем Алексий. Похоронен был во Владимире в Рождественском монастыре.</p>
+                        <p>В 1547 году на церковном соборе Александр Невский был канонизирован Русской православной церковью как святой благоверный князь. Его мощи были обретены нетленными и перенесены в Александро-Невскую лавру в Санкт-Петербурге.</p>
+                    </div>
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">1263</div>
+                            <div class="modal-stat-label">Год смерти</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Городец</div>
+                            <div class="modal-stat-label">Место смерти</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">1547</div>
+                            <div class="modal-stat-label">Год канонизации</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">43</div>
+                            <div class="modal-stat-label">Годы жизни</div>
+                        </div>
+                    </div>
+                `
+            },
+            neva: {
+                title: 'Невская битва (1240)',
+                content: `
+                    <div class="modal-info">
+                        <p><strong>Дата:</strong> 15 июля 1240 года</p>
+                        <p><strong>Место:</strong> Устье реки Ижоры, впадающей в Неву</p>
+                        <p><strong>Противники:</strong> Новгородское войско под командованием князя Александра против шведского войска под командованием Биргера Ярла</p>
+                        <p>Шведы планировали захватить устье Невы и Ладогу, отрезав Новгород от Балтийского моря. Александр, получив известие о приближении врага, быстро собрал дружину и двинулся навстречу.</p>
+                        <p>Битва началась внезапной атакой русских. Александр лично ранил Биргера в лицо. Шведы были разбиты и бежали. За эту победу Александр получил прозвище "Невский".</p>
+                    </div>
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~1,5K</div>
+                            <div class="modal-stat-label">Русские воины</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~5K</div>
+                            <div class="modal-stat-label">Шведские воины</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Минимальные</div>
+                            <div class="modal-stat-label">Потери русских</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Значительные</div>
+                            <div class="modal-stat-label">Потери шведов</div>
+                        </div>
+                    </div>
+                `
+            },
+            ice: {
+                title: 'Ледовое побоище (1242)',
+                content: `
+                    <div class="modal-info">
+                        <p><strong>Дата:</strong> 5 апреля 1242 года</p>
+                        <p><strong>Место:</strong> Чудское озеро (ныне на границе России и Эстонии)</p>
+                        <p><strong>Противники:</strong> Русское войско под командованием Александра Невского против войск Ливонского ордена</p>
+                        <p>Крестоносцы вторглись в новгородские земли и захватили Псков. Александр освободил Псков и двинулся навстречу основным силам ордена.</p>
+                        <p>Александр выбрал для битвы место на льду Чудского озера, где тяжелые рыцари были уязвимы. Русские войска использовали тактику окружения - "клещи". Рыцари, прорвав центр русских, были окружены с флангов и разбиты.</p>
+                        <p>По легенде, лед не выдержал тяжести доспехов рыцарей, и многие утонули. Эта битва остановила экспансию крестоносцев на восток на долгие годы.</p>
+                    </div>
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~15K</div>
+                            <div class="modal-stat-label">Русские воины</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~12K</div>
+                            <div class="modal-stat-label">Крестоносцы</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~400</div>
+                            <div class="modal-stat-label">Погибло русских</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~500</div>
+                            <div class="modal-stat-label">Погибло врагов</div>
+                        </div>
+                    </div>
+                `
+            },
+            toropets: {
+                title: 'Битва под Торопцем (1245)',
+                content: `
+                    <div class="modal-info">
+                        <p><strong>Дата:</strong> 1245 год</p>
+                        <p><strong>Место:</strong> Окрестности Торопца</p>
+                        <p><strong>Противники:</strong> Новгородское войско против литовских отрядов</p>
+                        <p>Литовские князья, воспользовавшись ослаблением Руси после монгольского нашествия, начали совершать набеги на новгородские земли.</p>
+                        <p>Александр Невский организовал поход против литовцев и разгромил их под Торопцем. Эта победа укрепила западные границы Руси и показала, что русские княжества способны защищать свои земли даже в трудное время.</p>
+                    </div>
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~8K</div>
+                            <div class="modal-stat-label">Русские воины</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">~6K</div>
+                            <div class="modal-stat-label">Литовские воины</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Победа</div>
+                            <div class="modal-stat-label">Результат</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-number">Запад</div>
+                            <div class="modal-stat-label">Границы защищены</div>
+                        </div>
+                    </div>
+                `
+            },
+            novgorod: {
+                title: 'Княжение в Новгороде',
+                content: `
+                    <div class="modal-info">
+                        <p>В 1236 году, когда Александру было 16 лет, его отец Ярослав уехал княжить в Киев, оставив сына наместником в Новгороде.</p>
+                        <p>Новгород был одним из крупнейших и богатейших городов Древней Руси. Новгородское вече имело большую власть, и князь должен был считаться с его мнением.</p>
+                        <p>Александр проявил себя как мудрый правитель и талантливый полководец. Он умел находить компромиссы с новгородцами и в то же время проводить свою политику.</p>
+                        <p>Именно в Новгороде Александр получил свой первый опыт управления и военного командования, который пригодился ему в дальнейшем.</p>
+                    </div>
+                `
+            },
+            kiev: {
+                title: 'Княжение в Киеве',
+                content: `
+                    <div class="modal-info">
+                        <p>В 1247 году, после смерти отца, Александр получил титул великого князя Киевского. Однако реальная власть в Киеве была ограничена.</p>
+                        <p>Киев к тому времени был сильно разорен монголами и утратил свое былое значение. Монгольские ханы контролировали назначение великих князей.</p>
+                        <p>Александр понимал, что в условиях монгольского ига прямое сопротивление невозможно. Он выбрал путь дипломатии и компромисса, чтобы сохранить русские земли от полного разорения.</p>
+                        <p>Фактически он продолжал править из Новгорода, а затем из Владимира, где была реальная власть.</p>
+                    </div>
+                `
+            },
+            vladimir: {
+                title: 'Великое княжение Владимирское',
+                content: `
+                    <div class="modal-info">
+                        <p>В 1252 году Александр Невский стал великим князем Владимирским - высшим титулом на Руси того времени.</p>
+                        <p>Владимирское княжество было самым сильным и влиятельным на Руси. Великий князь Владимирский считался главным среди русских князей.</p>
+                        <p>Александр укрепил центральную власть, способствовал восстановлению городов после монгольского нашествия, развивал торговлю и ремесла.</p>
+                        <p>Он продолжал дипломатическую политику с Золотой Ордой, добиваясь снижения дани и предотвращая карательные походы. Эта политика позволила русским землям восстановиться и накопить силы для будущего освобождения.</p>
+                    </div>
+                `
+            },
+            uprising: {
+                title: 'Восстание против монголов',
+                content: `
+                    <div class="modal-info">
+                        <p>В 1262 году в нескольких русских городах (Ростов, Владимир, Суздаль, Ярославль) вспыхнули восстания против монгольских сборщиков дани - баскаков.</p>
+                        <p>Восставшие убили баскаков и изгнали монгольских чиновников. Это могло привести к страшному карательному походу монголов на Русь.</p>
+                        <p>Александр Невский немедленно отправился в Орду к хану Берке, чтобы предотвратить карательный поход. Он сумел убедить хана не наказывать русские города.</p>
+                        <p>Эта поездка стоила Александру жизни - он тяжело заболел в Орде и умер на обратном пути. Но его жертва спасла русские земли от нового разорения.</p>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(type) {
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            const data = modalData[type];
+            
+            if (data) {
+                modalBody.innerHTML = `
+                    <div class="modal-title">${data.title}</div>
+                    ${data.content}
+                `;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Закрытие модального окна при клике вне его
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Закрытие по Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Анимация появления элементов при прокрутке
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Анимация элементов временной шкалы
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.15}s`;
+            observer.observe(item);
+        });
+
+        // Анимация статистических карточек при загрузке
+        document.querySelectorAll('.stat-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(40px) scale(0.9)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+            }, 300 + index * 150);
+        });
+
+        // Анимация карточек битв
+        document.querySelectorAll('.battle-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(40px) scale(0.95)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+            }, 600 + index * 200);
+        });
+
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
