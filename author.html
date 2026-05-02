@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Автор · Сандалов.Е.Р · ITMO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="page-author">
+    <header class="site-header">
+      <a
+        href="https://itmo.ru/"
+        class="logo-wrap"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Сайт Университета ИТМО (откроется в новой вкладке)"
+      >
+        <img
+          class="logo"
+          src="images/slogan-white.png"
+          alt="IT's MOre than a UNIVERSITY"
+          width="200"
+          height="75"
+          decoding="async"
+          onerror="this.onerror=null;this.src='images/slogan.png';this.classList.add('logo--invert');"
+        />
+      </a>
+      <button
+        type="button"
+        class="site-header__menu-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav-primary"
+        aria-label="Открыть меню"
+      >
+        <span class="site-header__burger" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav-primary" class="site-nav" aria-label="Основная навигация">
+        <a class="site-nav__pill" href="index.html">Главная</a>
+        <a class="site-nav__pill" href="sources.html">Источники</a>
+        <a class="site-nav__pill" href="author.html" aria-current="page">Автор</a>
+      </nav>
+    </header>
+
+    <main class="page author-layout">
+      <div class="author-layout__grid">
+        <div class="author-layout__pair">
+          <div class="author-text-col">
+            <div class="author-text">
+              <h1 class="author-name" lang="ru">Сандалов.Е.Р</h1>
+              <div class="author-text__bundle">
+                <p class="author-quote" lang="en">Where there is love there is life</p>
+                <a class="btn author-telegram" href="https://t.me/plssb" target="_blank" rel="noopener">Telegram</a>
+              </div>
+            </div>
+          </div>
+          <div class="author-visual">
+            <div class="author-visual__frame">
+              <img src="images/author-portrait.png" alt="Портрет автора" width="1024" height="1536" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/site-nav-mobile.js" defer></script>
+  </body>
+</html>

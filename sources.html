@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Источники · ITMO History project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/sources-viewport.js"></script>
+  </head>
+  <body class="page-doc page-sources">
+    <header class="site-header">
+      <a
+        href="https://itmo.ru/"
+        class="logo-wrap"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Сайт Университета ИТМО (откроется в новой вкладке)"
+      >
+        <img
+          class="logo"
+          src="images/slogan-white.png"
+          alt="IT's MOre than a UNIVERSITY"
+          width="200"
+          height="75"
+          decoding="async"
+          onerror="this.onerror=null;this.src='images/slogan.png';this.classList.add('logo--invert');"
+        />
+      </a>
+      <button
+        type="button"
+        class="site-header__menu-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav-primary"
+        aria-label="Открыть меню"
+      >
+        <span class="site-header__burger" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav-primary" class="site-nav" aria-label="Основная навигация">
+        <a class="site-nav__pill" href="index.html">Главная</a>
+        <a class="site-nav__pill" href="sources.html" aria-current="page">Источники</a>
+        <a class="site-nav__pill" href="author.html">Автор</a>
+      </nav>
+    </header>
+
+    <main class="sources-main">
+      <section class="sources-immersive" aria-labelledby="sources-heading">
+        <div class="sources-immersive__wrap">
+          <header class="sources-immersive__intro">
+            <p class="sources-kicker">Библиография проекта</p>
+
+            <div class="sources-kind-toggle" role="tablist" aria-label="Раздел источников">
+              <button
+                type="button"
+                class="sources-kind-toggle__btn"
+                role="tab"
+                id="tab-domestic"
+                aria-selected="true"
+                aria-controls="domestic"
+              >
+                Отечественные
+              </button>
+              <button
+                type="button"
+                class="sources-kind-toggle__btn"
+                role="tab"
+                id="tab-foreign"
+                aria-selected="false"
+                aria-controls="foreign"
+              >
+                Зарубежная литература
+              </button>
+            </div>
+
+            <h1 id="sources-heading" class="sources-display-title">Отечественные источники</h1>
+            <p class="sources-immersive__tagline" id="sources-tagline">
+              Наведите на корешок — он подсветится; ниже появятся название и краткое описание. Сайт источника
+              открывается нажатием на корешок.
+            </p>
+          </header>
+
+          <div
+            id="domestic"
+            class="sources-pane"
+            role="tabpanel"
+            aria-labelledby="tab-domestic"
+          >
+            <div class="sources-shelf sources-shelf--immersive">
+              <div class="sources-spines" role="list" aria-label="Отечественные источники">
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="https://bigenc.ru/c/krest-ianskaia-reforma-1861-db5085"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Большая российская энциклопедия — крестьянская реформа 1861"
+                  data-spine-meta="Справочная статья о механизме реформы и выкупной операции."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">БРЭ</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="https://search.rsl.ru/ru/search#q=%D0%9A%D0%B0%D1%89%D0%B5%D0%BD%D0%BA%D0%BE%20%D1%80%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B0%201861%20%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%D1%81%D0%BA%D0%B8%D0%B9%20%D1%83%D0%B5%D0%B7%D0%B4"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Кащенко С. Г. — реформа 1861 г. в помещичьих имениях Петербургского уезда"
+                  data-spine-meta="СПб.: Изд-во СПбГУ, 2022. Ссылка ведёт в поиск РНБ; при необходимости повторите запрос в CyberLeninka."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Кащенко</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="http://elib.shpl.ru/ru/nodes/5057"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Кованько П. Л. — реформа 1861 г. и выкупная операция"
+                  data-spine-meta="Киев, 1914. Электронная библиотека Шереметьевских палат."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Кованько</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="https://history-journal.spbu.ru/article/view/15466"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Миронов Б. Н. — крестьяне столичных губерний после освобождения"
+                  data-spine-meta="Вестник СПбГУ. История, 2021. Открытый PDF."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Миронов</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="https://cyberleninka.ru/article/n/povsednevnaya-zhizn-kapitalisticheskogo-peterburga-vtoraya-polovina-hih-veka-1914-g"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Нефедьева Е. В. — повседневная жизнь капиталистического Петербурга"
+                  data-spine-meta="Известия Петербургского университета путей сообщения, 2007."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Нефедьева</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="http://elib.shpl.ru/ru/nodes/40363-obzor-sankt-peterburgskoy-gubernii-po-godam-spb-1872-1915"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Обзор Санкт-Петербургской губернии по годам (1872–1915)"
+                  data-spine-meta="Сборник статистических обзоров на elib.shpl.ru."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Обзор</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="https://www.prlib.ru/collections/467127"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Президентская библиотека — коллекция «Крестьянская реформа 1861»"
+                  data-spine-meta="Материалы и подборка документов."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Пр. б-ка</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="https://cyberleninka.ru/article/n/sanitarnoe-sostoyanie-rabochih-rayonov-peterburga-v-nachale-xx-veka"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Семанов С. И. — санитарное состояние рабочих районов Петербурга"
+                  data-spine-meta="Гигиена и санитария, 1964. CyberLeninka."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Семанов</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="https://cyberleninka.ru/article/n/zhilischnye-usloviya-rabochih-sankt-peterburga-v-nachale-hh-v"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Федькин А. В. — жилищные условия рабочих Санкт-Петербурга"
+                  data-spine-meta="Царскосельские чтения, 2017."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Федькин</span>
+                </a>
+                <a
+                  role="listitem"
+                  class="sources-spine"
+                  href="http://www.vestospu.ru/archive/2018/articles/14_3_2018.html"
+                  target="_blank"
+                  rel="noopener"
+                  data-spine-title="Северцева О. В., Веременко В. А. — расчётные книжки работниц Петербурга"
+                  data-spine-meta="Вестник ОГПУ, 2018."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Северцева</span>
+                </a>
+              </div>
+
+              <div class="sources-spine-panel" aria-live="polite">
+                <div class="sources-spine-panel__content sources-spine-panel__content--domestic" hidden>
+                  <p class="sources-spine-panel__kicker">Электронный ресурс</p>
+                  <h3 class="sources-spine-panel__title sources-spine-panel__title--plain">
+                    <span class="sources-spine-panel__title-text"></span>
+                  </h3>
+                  <p class="sources-spine-panel__meta"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="foreign"
+            class="sources-pane"
+            role="tabpanel"
+            aria-labelledby="tab-foreign"
+            hidden
+          >
+            <div class="sources-shelf sources-shelf--immersive">
+              <div class="sources-spines sources-spines--foreign" role="list" aria-label="Зарубежная литература">
+                <button
+                  type="button"
+                  role="listitem"
+                  class="sources-spine sources-spine--cite"
+                  data-spine-no-link="true"
+                  data-spine-title="Lord and Peasant in Russia: From the Ninth to the Nineteenth Century"
+                  data-spine-meta="Blum J. Princeton: Princeton University Press, 1961."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Blum</span>
+                </button>
+                <button
+                  type="button"
+                  role="listitem"
+                  class="sources-spine sources-spine--cite"
+                  data-spine-no-link="true"
+                  data-spine-title="Roots of Rebellion: Workers’ Politics and Organizations in St. Petersburg and Moscow, 1900–1914"
+                  data-spine-meta="Bonnell V. E. Berkeley: University of California Press, 1983."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Bonnell</span>
+                </button>
+                <button
+                  type="button"
+                  role="listitem"
+                  class="sources-spine sources-spine--cite"
+                  data-spine-no-link="true"
+                  data-spine-title="The Tsarist Economy 1850–1917"
+                  data-spine-meta="Gatrell P. London: Batsford Academic, 1986."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Gatrell</span>
+                </button>
+                <button
+                  type="button"
+                  role="listitem"
+                  class="sources-spine sources-spine--cite"
+                  data-spine-no-link="true"
+                  data-spine-title="A Social History of Imperial Russia, 1700–1917 (2 vols.)"
+                  data-spine-meta="Mironov B. Boulder: Westview Press, 2000."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Mironov</span>
+                </button>
+                <button
+                  type="button"
+                  role="listitem"
+                  class="sources-spine sources-spine--cite"
+                  data-spine-no-link="true"
+                  data-spine-title="The Russian Peasantry 1600–1930: The World the Peasants Made"
+                  data-spine-meta="Moon D. London: Longman, 1999."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Moon</span>
+                </button>
+                <button
+                  type="button"
+                  role="listitem"
+                  class="sources-spine sources-spine--cite"
+                  data-spine-no-link="true"
+                  data-spine-title="The Awkward Class: Political Sociology of Peasantry in a Developing Society (Russia 1910–1925)"
+                  data-spine-meta="Shanin T. Oxford: Clarendon Press, 1972."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Shanin</span>
+                </button>
+                <button
+                  type="button"
+                  role="listitem"
+                  class="sources-spine sources-spine--cite"
+                  data-spine-no-link="true"
+                  data-spine-title="Labor and Society in Tsarist Russia: The Factory Workers of St. Petersburg, 1855–1870"
+                  data-spine-meta="Zelnik R. E. Stanford: Stanford University Press, 1971."
+                >
+                  <span class="sources-spine__ribbons" aria-hidden="true"></span>
+                  <span class="sources-spine__short">Zelnik</span>
+                </button>
+              </div>
+
+              <div class="sources-spine-panel" aria-live="polite">
+                <div class="sources-spine-panel__content sources-spine-panel__content--foreign" hidden>
+                  <p class="sources-spine-panel__kicker">Зарубежная монография</p>
+                  <h3 class="sources-spine-panel__title sources-spine-panel__title--plain">
+                    <span class="sources-spine-panel__title-text"></span>
+                  </h3>
+                  <p class="sources-spine-panel__meta"></p>
+                  <p class="sources-spine-panel__foreign-note">
+                    Прямой ссылки на полный текст нет: монографии обычно доступны в библиотеке вуза, в подписках (JSTOR,
+                    Project MUSE) или при покупке в онлайн-магазинах и у издательств.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="js/page-doc-scrollbar.js" defer></script>
+    <script src="js/sources-spines.js" defer></script>
+    <script src="js/site-nav-mobile.js" defer></script>
+  </body>
+</html>
